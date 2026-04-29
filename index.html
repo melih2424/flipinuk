@@ -313,11 +313,12 @@ footer{background:#080F0B;padding:56px 0 28px}
 }
 @media(max-width:768px){
   #hero-grid{grid-template-columns:1fr !important;padding:0 16px !important;margin-bottom:24px !important;}
-  #carousel-container{order:-1 !important;}
+  #carousel-container{order:-1 !important;overflow:visible !important;background:#FFFFFF !important;}
   #hero-grid > div:first-child{order:2 !important;}
   #hero-grid > div:first-child{text-align:center !important;padding-right:0 !important;}
   #hero-grid > div:first-child > div[style*="flex"]{justify-content:center !important;}
-  #carousel-container{height:280px !important;}
+  #carousel-container{height:320px !important;}
+  #hero{overflow:visible !important;}
   .nav-links,.nav-cta{display:none}
   .hamburger{display:flex}
   .steps-grid{grid-template-columns:1fr}
@@ -338,8 +339,8 @@ footer{background:#080F0B;padding:56px 0 28px}
   .hero-sub{font-size:.95rem}
 
   /* Hero mobil */
-  #hero{padding:70px 16px 32px !important;overflow:hidden !important;background:#FFFFFF !important;}
-  #carousel-container{height:260px !important;overflow:hidden !important;background:#FFFFFF !important;}
+  #hero{padding:70px 0 32px !important;overflow:visible !important;background:#FFFFFF !important;}
+  #carousel-container{height:320px !important;overflow:visible !important;background:#FFFFFF !important;}
   #carousel-inner{background:#FFFFFF !important;}
   #hero h1{font-size:1.6rem !important;margin-bottom:12px !important;}
   #hero p{font-size:14px !important;margin-bottom:20px !important;}
