@@ -39,14 +39,15 @@
 }
 </script>
 <title>FlipInUK — İngiltere'de Stratejik Mülk Yatırımı</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+<style>
+/* Sistem fontları - Google Fonts yok, sıfır render blocking */
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; }
+.font-serif, h1, h2, h3, .hero-title, .section-title { font-family: Georgia, 'Times New Roman', serif; }
+</style>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;font-size:16px;overflow-x:hidden;background:#FFFFFF;}
-body{font-family:'Inter',sans-serif;background:#FFFFFF;color:#2C3E50;overflow-x:hidden;max-width:100vw;overscroll-behavior-y:none;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#FFFFFF;color:#2C3E50;overflow-x:hidden;max-width:100vw;overscroll-behavior-y:none;}
 
 :root{
   --navy:#1E4D8C;
@@ -64,7 +65,7 @@ body{font-family:'Inter',sans-serif;background:#FFFFFF;color:#2C3E50;overflow-x:
   --tr:all .35s cubic-bezier(.4,0,.2,1)
 }
 
-h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.2}
+h1,h2,h3,h4{font-family:Georgia,'Times New Roman',serif;line-height:1.2}
 a{text-decoration:none}
 img{display:block;max-width:100%}
 
@@ -80,7 +81,7 @@ img{display:block;max-width:100%}
 .sec-sub.light{color:var(--gray)}
 .sec-sub.dark{color:#2C3E50}
 
-.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 30px;border-radius:4px;font-family:'Inter',sans-serif;font-size:.9375rem;font-weight:600;cursor:pointer;transition:var(--tr);border:2px solid transparent;letter-spacing:.3px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 30px;border-radius:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:.9375rem;font-weight:600;cursor:pointer;transition:var(--tr);border:2px solid transparent;letter-spacing:.3px}
 .btn-gold{background:var(--gold);color:var(--navy);border-color:var(--gold)}
 .btn-gold:hover{background:var(--gold2);border-color:var(--gold2);transform:translateY(-2px);box-shadow:0 8px 26px rgba(46,109,180,.42)}
 .btn-outline{background:transparent;color:var(--white);border-color:rgba(255,255,255,.45)}
@@ -94,8 +95,8 @@ img{display:block;max-width:100%}
 #header.scrolled{background:#FFFFFF;padding:13px 0;box-shadow:0 4px 20px rgba(27,58,107,.1)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
 .nav-logo{display:flex;align-items:center;gap:6px}
-.logo-mark{width:42px;height:42px;background:var(--gold);border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--navy);flex-shrink:0}
-.logo-name{font-family:'Inter',sans-serif;font-size:1.6rem;font-weight:800;display:block;line-height:1;letter-spacing:6.5px}
+.logo-mark{width:42px;height:42px;background:var(--gold);border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:Georgia,'Times New Roman',serif;font-size:1.1rem;font-weight:700;color:var(--navy);flex-shrink:0}
+.logo-name{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:1.6rem;font-weight:800;display:block;line-height:1;letter-spacing:6.5px}
 .logo-sub{font-size:.42rem;font-weight:600;color:#1E6BDB;letter-spacing:1px;text-transform:uppercase;display:block;margin-top:2px;white-space:nowrap}
 .nav-links{display:flex;align-items:center;gap:28px;list-style:none}
 .nav-links a{font-size:.84rem;font-weight:500;color:#1E4D8C;transition:var(--tr);letter-spacing:.4px}
@@ -107,7 +108,7 @@ img{display:block;max-width:100%}
 /* mobile nav */
 .mob-nav{display:none;position:fixed;inset:0;background:#FFFFFF;z-index:1100;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:0;padding:72px 36px 36px}
 .mob-nav.open{display:flex}
-.mob-nav a{font-family:'Inter',sans-serif;font-size:.82rem;font-weight:600;color:#0F2D6B;letter-spacing:1.5px;text-transform:uppercase;padding:14px 0;border-bottom:1px solid #E0EAF5;width:100%;transition:all 0.2s;position:relative;}
+.mob-nav a{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:.82rem;font-weight:600;color:#0F2D6B;letter-spacing:1.5px;text-transform:uppercase;padding:14px 0;border-bottom:1px solid #E0EAF5;width:100%;transition:all 0.2s;position:relative;}
 .mob-nav a:first-of-type{border-top:1px solid #E0EAF5}
 .mob-nav a:hover{color:#1E6BDB;padding-left:10px;}
 .mob-nav a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:#1E6BDB;transition:width 0.25s ease;}
@@ -136,7 +137,7 @@ img{display:block;max-width:100%}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
 .stat-item{text-align:center;padding:28px 16px;border-right:1px solid rgba(255,255,255,.2)}
 .stat-item:last-child{border-right:none}
-.stat-num{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.8vw,2.9rem);font-weight:700;color:#7EB8F7;line-height:1;margin-bottom:9px}
+.stat-num{font-family:Georgia,'Times New Roman',serif;font-size:clamp(2rem,3.8vw,2.9rem);font-weight:700;color:#7EB8F7;line-height:1;margin-bottom:9px}
 .stat-lbl{font-size:.84rem;color:rgba(255,255,255,.75);letter-spacing:.4px}
 
 /* ── HOW IT WORKS ── */
@@ -145,7 +146,7 @@ img{display:block;max-width:100%}
 .step-card{background:var(--navy);border-radius:8px;padding:44px 34px;border:1px solid rgba(255,255,255,.2);position:relative;overflow:hidden;transition:var(--tr)}
 .step-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold)}
 .step-card:hover{transform:translateY(-7px);box-shadow:0 28px 64px rgba(27,58,107,.28);border-color:var(--goldborder)}
-.step-num{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;color:rgba(255,255,255,.1);line-height:1;margin-bottom:18px}
+.step-num{font-family:Georgia,'Times New Roman',serif;font-size:3.6rem;font-weight:900;color:rgba(255,255,255,.1);line-height:1;margin-bottom:18px}
 .step-icon{width:50px;height:50px;background:var(--goldfaint);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:18px}
 .step-card h3{font-size:1.2rem;font-weight:700;color:var(--white);margin-bottom:12px}
 .step-card p{font-size:.875rem;color:rgba(255,255,255,.75);line-height:1.72}
@@ -218,10 +219,10 @@ img{display:block;max-width:100%}
 .proj2-metric{padding:18px 26px;border-right:1px solid rgba(0,0,0,.06)}
 .proj2-metric:last-child{border-right:none}
 .proj2-metric-lbl{font-size:.65rem;font-weight:700;color:#9CA3AF;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px;display:block}
-.proj2-metric-val{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;display:block;line-height:1}
+.proj2-metric-val{font-family:Georgia,'Times New Roman',serif;font-size:2rem;font-weight:700;display:block;line-height:1}
 .proj2-metric.gn .proj2-metric-val{color:#2E6DB4}
 .proj2-metric.gd .proj2-metric-val{color:#5B9BD5}
-.proj2-cta{display:block;background:var(--navy);color:var(--white);text-align:center;padding:15px;font-size:.9rem;font-weight:600;font-family:'Inter',sans-serif;transition:var(--tr);letter-spacing:.4px}
+.proj2-cta{display:block;background:var(--navy);color:var(--white);text-align:center;padding:15px;font-size:.9rem;font-weight:600;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;transition:var(--tr);letter-spacing:.4px}
 .proj2-cta:hover{background:var(--navy3);letter-spacing:1.2px}
 
 /* ── SIMULATOR ── */
@@ -232,7 +233,7 @@ img{display:block;max-width:100%}
 .sim-slider-group{display:flex;flex-direction:column;gap:10px}
 .sim-slider-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:2px}
 .sim-slider-lbl{font-size:.7rem;font-weight:700;color:rgba(255,255,255,.85);letter-spacing:1.8px;text-transform:uppercase}
-.sim-slider-val{font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:700;color:#7EB8F7;line-height:1}
+.sim-slider-val{font-family:Georgia,'Times New Roman',serif;font-size:1.55rem;font-weight:700;color:#7EB8F7;line-height:1}
 .sim-range{-webkit-appearance:none;width:100%;height:4px;border-radius:2px;outline:none;cursor:pointer;background:rgba(255,255,255,.1);transition:background .05s}
 .sim-range::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:#FFFFFF;border:3px solid var(--navy);box-shadow:0 0 0 2px #FFFFFF,0 4px 14px rgba(46,109,180,.35);cursor:pointer;transition:transform .15s,box-shadow .15s}
 .sim-range::-webkit-slider-thumb:hover{transform:scale(1.18);box-shadow:0 0 0 3px #FFFFFF,0 6px 20px rgba(46,109,180,.45)}
@@ -256,8 +257,8 @@ img{display:block;max-width:100%}
 .sim-metric{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:14px 10px;text-align:center;transition:border-color .3s,background .3s}
 .sim-metric.accent{border-color:rgba(46,109,180,.22);background:rgba(46,109,180,.07)}
 .sim-metric-lbl{font-size:.62rem;color:rgba(255,255,255,.75);letter-spacing:1px;text-transform:uppercase;margin-bottom:7px;display:block}
-.sim-metric-val{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--white);display:block;transition:color .3s;word-break:break-all}
-.sim-metric-val.dim{font-family:'Inter',sans-serif;font-size:.88rem;font-weight:500;color:rgba(255,255,255,.55)}
+.sim-metric-val{font-family:Georgia,'Times New Roman',serif;font-size:1.05rem;font-weight:700;color:var(--white);display:block;transition:color .3s;word-break:break-all}
+.sim-metric-val.dim{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:.88rem;font-weight:500;color:rgba(255,255,255,.55)}
 .sim-verdict{display:flex;align-items:center;gap:10px;padding:12px 18px;border-radius:8px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);width:100%;transition:border-color .4s,background .4s}
 .sim-verdict-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.4);flex-shrink:0;transition:background .4s}
 .sim-verdict-msg{font-size:.82rem;color:rgba(255,255,255,.75);transition:color .4s;line-height:1.4}
@@ -284,7 +285,7 @@ img{display:block;max-width:100%}
 .acc-header{display:flex;align-items:center;gap:14px;padding:18px 22px;cursor:pointer;transition:background .2s}
 .acc-header:hover{background:rgba(46,109,180,.04)}
 .acc-ico{width:36px;height:36px;border-radius:8px;background:rgba(46,109,180,.1);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
-.acc-header h4{font-size:.9rem;font-weight:600;color:var(--navy);flex:1;font-family:'Inter',sans-serif}
+.acc-header h4{font-size:.9rem;font-weight:600;color:var(--navy);flex:1;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
 .acc-chev{font-size:.7rem;color:var(--gold);transition:transform .3s ease;flex-shrink:0}
 .acc-item.open .acc-chev{transform:rotate(180deg)}
 .acc-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
@@ -298,12 +299,12 @@ img{display:block;max-width:100%}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .form-field{display:flex;flex-direction:column;gap:7px}
 .form-field label{font-size:.76rem;font-weight:700;color:rgba(255,255,255,.85);letter-spacing:1.2px;text-transform:uppercase}
-.form-field input,.form-field textarea,.form-field select{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:13px 16px;font-family:'Inter',sans-serif;font-size:.9375rem;color:var(--white);transition:var(--tr);outline:none;-webkit-appearance:none}
+.form-field input,.form-field textarea,.form-field select{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:13px 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:.9375rem;color:var(--white);transition:var(--tr);outline:none;-webkit-appearance:none}
 .form-field input:focus,.form-field textarea:focus,.form-field select:focus{border-color:var(--gold);background:rgba(46,109,180,.05)}
 .form-field textarea{resize:vertical;min-height:116px}
 .form-field select option{background:var(--navy);color:var(--white)}
 .form-field input::placeholder,.form-field textarea::placeholder{color:rgba(255,255,255,.22)}
-.form-submit{background:var(--gold);color:var(--navy);border:none;border-radius:6px;padding:15px 32px;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;transition:var(--tr);align-self:flex-start}
+.form-submit{background:var(--gold);color:var(--navy);border:none;border-radius:6px;padding:15px 32px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:1rem;font-weight:700;cursor:pointer;transition:var(--tr);align-self:flex-start}
 .form-submit:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 8px 26px rgba(46,109,180,.35)}
 .contact-info-side{display:flex;flex-direction:column;gap:38px;padding-top:10px}
 .contact-info-title{font-size:1.7rem;font-weight:700;color:var(--white);margin-bottom:8px}
@@ -321,11 +322,11 @@ img{display:block;max-width:100%}
 footer{background:#080F0B;padding:56px 0 28px}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:32px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:28px}
 .f-logo{display:flex;align-items:center;gap:11px;margin-bottom:14px}
-.f-logo-mark{width:38px;height:38px;background:var(--gold);border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--navy)}
-.f-logo-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);display:block;line-height:1}
+.f-logo-mark{width:38px;height:38px;background:var(--gold);border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:Georgia,'Times New Roman',serif;font-size:1rem;font-weight:700;color:var(--navy)}
+.f-logo-name{font-family:Georgia,'Times New Roman',serif;font-size:1rem;font-weight:700;color:var(--white);display:block;line-height:1}
 .f-logo-sub{font-size:.58rem;font-weight:500;color:var(--gold);letter-spacing:2.5px;text-transform:uppercase;display:block;margin-top:3px}
 .f-desc{font-size:.875rem;color:var(--gray);line-height:1.72;max-width:270px}
-.f-col h5{font-family:'Playfair Display',serif;font-size:.9rem;font-weight:600;color:var(--white);margin-bottom:14px}
+.f-col h5{font-family:Georgia,'Times New Roman',serif;font-size:.9rem;font-weight:600;color:var(--white);margin-bottom:14px}
 .f-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
 .f-col ul li a{font-size:.875rem;color:var(--gray);transition:color .2s}
 .f-col ul li a:hover{color:#ffffff}
@@ -468,7 +469,7 @@ footer{background:#080F0B;padding:56px 0 28px}
         <li><a href="#riskler">Riskler</a></li>
       </ul>
       <div class="nav-cta">
-        <a href="#iletisim" style="background:#1E4D8C;color:#FFFFFF;padding:9px 20px;border-radius:6px;font-family:Inter,sans-serif;font-size:.85rem;font-weight:600;text-decoration:none;transition:background .2s;" onmouseover="this.style.background='#22C55E'" onmouseout="this.style.background='#1E4D8C'">Bilgi Al</a>
+        <a href="#iletisim" style="background:#1E4D8C;color:#FFFFFF;padding:9px 20px;border-radius:6px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:.85rem;font-weight:600;text-decoration:none;transition:background .2s;" onmouseover="this.style.background='#22C55E'" onmouseout="this.style.background='#1E4D8C'">Bilgi Al</a>
       </div>
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -480,7 +481,7 @@ footer{background:#080F0B;padding:56px 0 28px}
 <div class="mob-nav" id="mobNav">
   <button class="mob-close" id="mobClose">✕</button>
   <div style="margin-bottom:28px;">
-    <div style="font-family:'Inter',sans-serif;font-size:1.1rem;font-weight:800;letter-spacing:6px;color:#0F2D6B;"><span>Flipin</span><span style="color:#1E6BDB;">UK</span></div>
+    <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:1.1rem;font-weight:800;letter-spacing:6px;color:#0F2D6B;"><span>Flipin</span><span style="color:#1E6BDB;">UK</span></div>
     <div style="font-size:.42rem;font-weight:600;color:#1E6BDB;letter-spacing:1px;text-transform:uppercase;margin-top:2px;">— Property Flip Investments —</div>
   </div>
   <a href="#nasil-calisir" class="mob-link">Nasıl Çalışır?</a>
@@ -495,16 +496,16 @@ footer{background:#080F0B;padding:56px 0 28px}
     <div style="display:flex;gap:10px;margin-bottom:12px;">
       <a href="tel:+905319765040" style="flex:1;display:flex;align-items:center;gap:8px;padding:10px 12px;background:#F4F7FB;border-radius:10px;text-decoration:none;">
         <span style="font-size:16px;">📞</span>
-        <span style="font-size:12px;font-weight:600;color:#1B3A6B;font-family:'Inter',sans-serif;">+90 531 976 50 40</span>
+        <span style="font-size:12px;font-weight:600;color:#1B3A6B;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">+90 531 976 50 40</span>
       </a>
     </div>
     <div style="display:flex;gap:10px;margin-bottom:12px;">
       <a href="mailto:info@flipinuk.com" style="flex:1;display:flex;align-items:center;gap:8px;padding:10px 12px;background:#F4F7FB;border-radius:10px;text-decoration:none;">
         <span style="font-size:16px;">✉️</span>
-        <span style="font-size:12px;font-weight:600;color:#1B3A6B;font-family:'Inter',sans-serif;">info@flipinuk.com</span>
+        <span style="font-size:12px;font-weight:600;color:#1B3A6B;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">info@flipinuk.com</span>
       </a>
     </div>
-    <a href="https://wa.me/905319765040" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:11px;background:#25D366;color:#fff;border-radius:10px;text-decoration:none;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;box-sizing:border-box;">
+    <a href="https://wa.me/905319765040" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:11px;background:#25D366;color:#fff;border-radius:10px;text-decoration:none;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;font-weight:700;box-sizing:border-box;">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       WhatsApp ile Yaz
     </a>
@@ -524,10 +525,10 @@ footer{background:#080F0B;padding:56px 0 28px}
     <div style="display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border:1px solid #1E4D8C;border-radius:999px;margin-bottom:24px;font-size:13px;color:#1E4D8C;font-weight:600;">
       🇬🇧 %15+ ROI HEDEFİ
     </div>
-    <h1 style="font-family:'Playfair Display',serif;font-size:clamp(28px,3.2vw,46px);font-weight:700;color:#1B3A6B;line-height:1.2;margin:0 0 20px;">
+    <h1 style="font-family:Georgia,'Times New Roman',serif;font-size:clamp(28px,3.2vw,46px);font-weight:700;color:#1B3A6B;line-height:1.2;margin:0 0 20px;">
       İngiltere'de FlipInUK ile<br><em style="font-style:italic;color:#2E6DB4;">Sterlin Bazlı Kazanç</em>
     </h1>
-    <p style="font-family:'Inter',sans-serif;font-size:18px;color:#64748B;margin:0 0 32px;line-height:1.6;">
+    <p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:18px;color:#64748B;margin:0 0 32px;line-height:1.6;">
       Doğru alım, doğru renovasyon ve doğru satış stratejisi ile %15+ ROI hedefleyen kurumsal gayrimenkul yatırım modeli. 150'den fazla başarılı proje deneyimi.
     </p>
     <div style="display:flex;gap:16px;justify-content:flex-start;flex-wrap:wrap;">
@@ -551,17 +552,17 @@ footer{background:#080F0B;padding:56px 0 28px}
   <div id="feature-cards" style="position:relative;z-index:20;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;width:100%;max-width:800px;">
     <div style="text-align:center;padding:24px;background:#fff;border:1px solid #E0EAF5;border-radius:16px;transition:all 0.3s;" onmouseover="this.style.borderColor='#1E4D8C'" onmouseout="this.style.borderColor='#E0EAF5'">
       <div style="font-size:28px;margin-bottom:8px;">🏠</div>
-      <h3 style="font-family:'Inter',sans-serif;font-size:16px;font-weight:600;color:#1B3A6B;margin:0 0 8px;">Gerçekçi Sonuçlar</h3>
+      <h3 style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:16px;font-weight:600;color:#1B3A6B;margin:0 0 8px;">Gerçekçi Sonuçlar</h3>
       <p style="font-size:14px;color:#64748B;margin:0;">Profesyonelce hazırlanmış mülk dönüşümleri</p>
     </div>
     <div style="text-align:center;padding:24px;background:#fff;border:1px solid #E0EAF5;border-radius:16px;transition:all 0.3s;" onmouseover="this.style.borderColor='#1E4D8C'" onmouseout="this.style.borderColor='#E0EAF5'">
       <div style="font-size:28px;margin-bottom:8px;">⚡</div>
-      <h3 style="font-family:'Inter',sans-serif;font-size:16px;font-weight:600;color:#1B3A6B;margin:0 0 8px;">Hızlı Süreç</h3>
+      <h3 style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:16px;font-weight:600;color:#1B3A6B;margin:0 0 8px;">Hızlı Süreç</h3>
       <p style="font-size:14px;color:#64748B;margin:0;">4-8 ay içinde tamamlanan projeler</p>
     </div>
     <div style="text-align:center;padding:24px;background:#fff;border:1px solid #E0EAF5;border-radius:16px;transition:all 0.3s;" onmouseover="this.style.borderColor='#1E4D8C'" onmouseout="this.style.borderColor='#E0EAF5'">
       <div style="font-size:28px;margin-bottom:8px;">🎯</div>
-      <h3 style="font-family:'Inter',sans-serif;font-size:16px;font-weight:600;color:#1B3A6B;margin:0 0 8px;">Çeşitli Modeller</h3>
+      <h3 style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:16px;font-weight:600;color:#1B3A6B;margin:0 0 8px;">Çeşitli Modeller</h3>
       <p style="font-size:14px;color:#64748B;margin:0;">Risk toleransınıza göre 3 farklı yatırım modeli</p>
     </div>
   </div>
@@ -575,24 +576,24 @@ footer{background:#080F0B;padding:56px 0 28px}
   <div style="max-width:1100px;margin:0 auto;padding:0 24px;">
     <div id="stats-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;">
       <div class="stat-item" style="text-align:center;padding:16px 20px;border-right:1px solid rgba(255,255,255,0.15);">
-        <div style="font-family:'Playfair Display',serif;font-size:clamp(18px,3vw,38px);font-weight:700;color:#FFFFFF;line-height:1;margin-bottom:8px;" data-target="50" data-prefix="£" data-suffix="M+">£0M+</div>
+        <div style="font-family:Georgia,'Times New Roman',serif;font-size:clamp(18px,3vw,38px);font-weight:700;color:#FFFFFF;line-height:1;margin-bottom:8px;" data-target="50" data-prefix="£" data-suffix="M+">£0M+</div>
         <div style="width:24px;height:2px;background:rgba(255,255,255,0.4);margin:0 auto 8px;"></div>
-        <div style="font-family:'Inter',sans-serif;font-size:11px;color:rgba(255,255,255,0.75);letter-spacing:1px;text-transform:uppercase;">Toplam İşlem Hacmi</div>
+        <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:11px;color:rgba(255,255,255,0.75);letter-spacing:1px;text-transform:uppercase;">Toplam İşlem Hacmi</div>
       </div>
       <div class="stat-item" style="text-align:center;padding:16px 20px;border-right:1px solid rgba(255,255,255,0.15);">
-        <div style="font-family:'Playfair Display',serif;font-size:clamp(18px,3vw,38px);font-weight:700;color:#FFFFFF;line-height:1;margin-bottom:8px;" data-target="150" data-suffix="+">0+</div>
+        <div style="font-family:Georgia,'Times New Roman',serif;font-size:clamp(18px,3vw,38px);font-weight:700;color:#FFFFFF;line-height:1;margin-bottom:8px;" data-target="150" data-suffix="+">0+</div>
         <div style="width:24px;height:2px;background:rgba(255,255,255,0.4);margin:0 auto 8px;"></div>
-        <div style="font-family:'Inter',sans-serif;font-size:11px;color:rgba(255,255,255,0.75);letter-spacing:1px;text-transform:uppercase;">Tamamlanan Proje</div>
+        <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:11px;color:rgba(255,255,255,0.75);letter-spacing:1px;text-transform:uppercase;">Tamamlanan Proje</div>
       </div>
       <div class="stat-item" style="text-align:center;padding:16px 20px;border-right:1px solid rgba(255,255,255,0.15);">
-        <div style="font-family:'Playfair Display',serif;font-size:clamp(18px,3vw,38px);font-weight:700;color:#FFFFFF;line-height:1;margin-bottom:8px;" data-target="18" data-prefix="%" data-suffix=" Ort.">%0 Ort.</div>
+        <div style="font-family:Georgia,'Times New Roman',serif;font-size:clamp(18px,3vw,38px);font-weight:700;color:#FFFFFF;line-height:1;margin-bottom:8px;" data-target="18" data-prefix="%" data-suffix=" Ort.">%0 Ort.</div>
         <div style="width:24px;height:2px;background:rgba(255,255,255,0.4);margin:0 auto 8px;"></div>
-        <div style="font-family:'Inter',sans-serif;font-size:11px;color:rgba(255,255,255,0.75);letter-spacing:1px;text-transform:uppercase;">Ortalama ROI</div>
+        <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:11px;color:rgba(255,255,255,0.75);letter-spacing:1px;text-transform:uppercase;">Ortalama ROI</div>
       </div>
       <div class="stat-item" style="text-align:center;padding:16px 20px;">
-        <div style="font-family:'Playfair Display',serif;font-size:clamp(18px,3vw,38px);font-weight:700;color:#FFFFFF;line-height:1;margin-bottom:8px;" data-target="32" data-prefix="+£" data-suffix="K">+£0K</div>
+        <div style="font-family:Georgia,'Times New Roman',serif;font-size:clamp(18px,3vw,38px);font-weight:700;color:#FFFFFF;line-height:1;margin-bottom:8px;" data-target="32" data-prefix="+£" data-suffix="K">+£0K</div>
         <div style="width:24px;height:2px;background:rgba(255,255,255,0.4);margin:0 auto 8px;"></div>
-        <div style="font-family:'Inter',sans-serif;font-size:11px;color:rgba(255,255,255,0.75);letter-spacing:1px;text-transform:uppercase;">Son Proje Kazancı</div>
+        <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:11px;color:rgba(255,255,255,0.75);letter-spacing:1px;text-transform:uppercase;">Son Proje Kazancı</div>
       </div>
     </div>
   </div>
@@ -603,39 +604,39 @@ footer{background:#080F0B;padding:56px 0 28px}
   <div style="position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#0F2D6B,#2E6DB4,#5B9BD5);"></div>
   <div style="max-width:1100px;margin:0 auto;padding:0 24px;">
     <div style="text-align:center;margin-bottom:36px;">
-      <div style="font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;color:#2E6DB4;text-transform:uppercase;margin-bottom:10px;">SÜREÇ</div>
-      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(24px,3vw,36px);font-weight:700;color:#1B3A6B;margin:0 0 12px;">Nasıl Çalışır?</h2>
+      <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;color:#2E6DB4;text-transform:uppercase;margin-bottom:10px;">SÜREÇ</div>
+      <h2 style="font-family:Georgia,'Times New Roman',serif;font-size:clamp(24px,3vw,36px);font-weight:700;color:#1B3A6B;margin:0 0 12px;">Nasıl Çalışır?</h2>
       <div style="width:40px;height:3px;background:linear-gradient(90deg,#1E4D8C,#5B9BD5);margin:0 auto 12px;border-radius:2px;"></div>
-      <p style="font-family:'Inter',sans-serif;font-size:15px;color:#64748B;max-width:540px;margin:0 auto;line-height:1.6;">Property flip yatırımımız üç temel aşamadan oluşur. Her aşama titizlikle analiz edilir ve risk minimize edilir.</p>
+      <p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:15px;color:#64748B;max-width:540px;margin:0 auto;line-height:1.6;">Property flip yatırımımız üç temel aşamadan oluşur. Her aşama titizlikle analiz edilir ve risk minimize edilir.</p>
     </div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;position:relative;">
       <div style="position:absolute;top:36px;left:calc(16.66% + 10px);right:calc(16.66% + 10px);height:2px;background:linear-gradient(90deg,#1E4D8C,#5B9BD5);z-index:0;"></div>
       <div style="background:#FFFFFF;border-radius:16px;padding:28px 24px;box-shadow:0 4px 24px rgba(30,77,140,0.10);border:1px solid #E0EAF5;position:relative;transition:all 0.3s;" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 48px rgba(30,77,140,0.18)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 24px rgba(30,77,140,0.10)'">
         <div style="width:44px;height:44px;background:linear-gradient(135deg,#0F2D6B,#2E6DB4);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:18px;position:relative;z-index:1;">
-          <span style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#FFFFFF;">01</span>
+          <span style="font-family:Georgia,'Times New Roman',serif;font-size:17px;font-weight:700;color:#FFFFFF;">01</span>
         </div>
         <div style="font-size:22px;margin-bottom:10px;">🏠</div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#1B3A6B;margin:0 0 10px;">Stratejik Alım</h3>
+        <h3 style="font-family:Georgia,'Times New Roman',serif;font-size:18px;font-weight:700;color:#1B3A6B;margin:0 0 10px;">Stratejik Alım</h3>
         <div style="width:28px;height:2px;background:#2E6DB4;margin-bottom:10px;border-radius:2px;"></div>
-        <p style="font-family:'Inter',sans-serif;font-size:14px;color:#64748B;line-height:1.6;margin:0;">Piyasanın %10–20 altında fiyatlanmış mülkleri tespit ederiz. Bölgesel talep analizi, açık artırma fırsatları ve off-market satışlar ile en iyi alım fiyatını yakalarız.</p>
+        <p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;color:#64748B;line-height:1.6;margin:0;">Piyasanın %10–20 altında fiyatlanmış mülkleri tespit ederiz. Bölgesel talep analizi, açık artırma fırsatları ve off-market satışlar ile en iyi alım fiyatını yakalarız.</p>
       </div>
       <div style="background:linear-gradient(145deg,#1E4D8C,#0F2D6B);border-radius:16px;padding:28px 24px;box-shadow:0 4px 24px rgba(30,77,140,0.25);position:relative;transition:all 0.3s;" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 48px rgba(30,77,140,0.35)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 24px rgba(30,77,140,0.25)'">
         <div style="width:44px;height:44px;background:rgba(255,255,255,0.2);border:2px solid rgba(255,255,255,0.4);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
-          <span style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#FFFFFF;">02</span>
+          <span style="font-family:Georgia,'Times New Roman',serif;font-size:17px;font-weight:700;color:#FFFFFF;">02</span>
         </div>
         <div style="font-size:22px;margin-bottom:10px;">📊</div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#FFFFFF;margin:0 0 10px;">Finansal Model</h3>
+        <h3 style="font-family:Georgia,'Times New Roman',serif;font-size:18px;font-weight:700;color:#FFFFFF;margin:0 0 10px;">Finansal Model</h3>
         <div style="width:28px;height:2px;background:rgba(255,255,255,0.5);margin-bottom:10px;border-radius:2px;"></div>
-        <p style="font-family:'Inter',sans-serif;font-size:14px;color:rgba(255,255,255,0.8);line-height:1.6;margin:0;">SDLT vergi hesaplamaları, köprü kredisi maliyetleri, renovasyon bütçesi ve hedef satış fiyatı ile kapsamlı ROI analizi yapılır. %15 minimum ROI kuralı her proje için geçerlidir.</p>
+        <p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;color:rgba(255,255,255,0.8);line-height:1.6;margin:0;">SDLT vergi hesaplamaları, köprü kredisi maliyetleri, renovasyon bütçesi ve hedef satış fiyatı ile kapsamlı ROI analizi yapılır. %15 minimum ROI kuralı her proje için geçerlidir.</p>
       </div>
       <div style="background:#FFFFFF;border-radius:16px;padding:28px 24px;box-shadow:0 4px 24px rgba(30,77,140,0.10);border:1px solid #E0EAF5;position:relative;transition:all 0.3s;" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 48px rgba(30,77,140,0.18)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 24px rgba(30,77,140,0.10)'">
         <div style="width:44px;height:44px;background:linear-gradient(135deg,#0F2D6B,#2E6DB4);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
-          <span style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#FFFFFF;">03</span>
+          <span style="font-family:Georgia,'Times New Roman',serif;font-size:17px;font-weight:700;color:#FFFFFF;">03</span>
         </div>
         <div style="font-size:22px;margin-bottom:10px;">🛡️</div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#1B3A6B;margin:0 0 10px;">Risk Yönetimi</h3>
+        <h3 style="font-family:Georgia,'Times New Roman',serif;font-size:18px;font-weight:700;color:#1B3A6B;margin:0 0 10px;">Risk Yönetimi</h3>
         <div style="width:28px;height:2px;background:#2E6DB4;margin-bottom:10px;border-radius:2px;"></div>
-        <p style="font-family:'Inter',sans-serif;font-size:14px;color:#64748B;line-height:1.6;margin:0;">Yasal incelemeler, planning izinleri ve yapı yönetmeliği uyumluluğu sistematik olarak yönetilir. Bağımsız değerleme ve yapısal survey ile gizli riskler önceden tespit edilir.</p>
+        <p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;color:#64748B;line-height:1.6;margin:0;">Yasal incelemeler, planning izinleri ve yapı yönetmeliği uyumluluğu sistematik olarak yönetilir. Bağımsız değerleme ve yapısal survey ile gizli riskler önceden tespit edilir.</p>
       </div>
     </div>
   </div>
@@ -692,10 +693,10 @@ footer{background:#080F0B;padding:56px 0 28px}
 <section id="once-sonra" style="padding:60px 0;background:#F4F7FB;">
   <div style="max-width:1000px;margin:0 auto;padding:0 24px;">
     <div style="text-align:center;margin-bottom:36px;">
-      <div style="font-family:Inter,sans-serif;font-size:12px;font-weight:700;letter-spacing:3px;color:#2E6DB4;text-transform:uppercase;margin-bottom:12px;">DÖNÜŞÜM</div>
-      <h2 style="font-family:Playfair Display,serif;font-size:clamp(24px,3vw,40px);font-weight:700;color:#1B3A6B;margin:0 0 12px;">Önce / Sonra</h2>
+      <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:12px;font-weight:700;letter-spacing:3px;color:#2E6DB4;text-transform:uppercase;margin-bottom:12px;">DÖNÜŞÜM</div>
+      <h2 style="font-family:Georgia,'Times New Roman',serif;font-size:clamp(24px,3vw,40px);font-weight:700;color:#1B3A6B;margin:0 0 12px;">Önce / Sonra</h2>
       <div style="width:40px;height:3px;background:linear-gradient(90deg,#1E4D8C,#5B9BD5);margin:0 auto 12px;border-radius:2px;"></div>
-      <p style="font-family:Inter,sans-serif;font-size:15px;color:#64748B;margin:0;">Kaydırıcıyı sürükleyerek renovasyon öncesi ve sonrasını karşılaştırın.</p>
+      <p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:15px;color:#64748B;margin:0;">Kaydırıcıyı sürükleyerek renovasyon öncesi ve sonrasını karşılaştırın.</p>
     </div>
     
     <div id="img-comparison" style="position:relative;width:100%;height:460px;border-radius:16px;overflow:hidden;box-shadow:0 8px 40px rgba(30,77,140,0.18);cursor:ew-resize;user-select:none;">
@@ -953,13 +954,13 @@ footer{background:#080F0B;padding:56px 0 28px}
     <!-- Başlık + bilgi kutusu yan yana -->
     <div style="display:flex;align-items:center;justify-content:space-between;gap:32px;margin-bottom:28px;flex-wrap:wrap;">
       <div>
-        <div style="font-family:Inter,sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;color:rgba(255,255,255,0.6);text-transform:uppercase;margin-bottom:8px;">ŞEFFAFLIK</div>
-        <h2 style="font-family:Playfair Display,serif;font-size:clamp(22px,3vw,34px);font-weight:700;color:#FFFFFF;margin:0 0 8px;">Yatırım Riskleri</h2>
-        <p style="font-family:Inter,sans-serif;font-size:14px;color:rgba(255,255,255,0.7);margin:0;line-height:1.6;max-width:420px;">Property flip yatırımı getiri potansiyeli ile birlikte yönetilmesi gereken riskler içerir. Tüm riskleri önceden belirler, sistematik önlemler alırız.</p>
+        <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;color:rgba(255,255,255,0.6);text-transform:uppercase;margin-bottom:8px;">ŞEFFAFLIK</div>
+        <h2 style="font-family:Georgia,'Times New Roman',serif;font-size:clamp(22px,3vw,34px);font-weight:700;color:#FFFFFF;margin:0 0 8px;">Yatırım Riskleri</h2>
+        <p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;color:rgba(255,255,255,0.7);margin:0;line-height:1.6;max-width:420px;">Property flip yatırımı getiri potansiyeli ile birlikte yönetilmesi gereken riskler içerir. Tüm riskleri önceden belirler, sistematik önlemler alırız.</p>
       </div>
       <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;padding:14px 20px;text-align:center;flex-shrink:0;">
-        <span style="font-family:Inter,sans-serif;font-size:13px;color:#7EB8F7;font-weight:700;">%15 ROI Kuralı: </span>
-        <span style="font-family:Inter,sans-serif;font-size:13px;color:rgba(255,255,255,0.85);">Minimum hedef karşılanmadan yatırım yapılmaz.</span>
+        <span style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;color:#7EB8F7;font-weight:700;">%15 ROI Kuralı: </span>
+        <span style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;color:rgba(255,255,255,0.85);">Minimum hedef karşılanmadan yatırım yapılmaz.</span>
       </div>
     </div>
 
@@ -969,66 +970,66 @@ footer{background:#080F0B;padding:56px 0 28px}
       <div class="risk-item" style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;overflow:hidden;transition:all 0.3s;">
         <div onclick="toggleRisk(this)" style="display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;">
           <span style="font-size:18px;">💷</span>
-          <span style="font-family:Inter,sans-serif;font-size:14px;font-weight:600;color:#FFFFFF;flex:1;">SDLT Vergisi (Damga Vergisi)</span>
+          <span style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;font-weight:600;color:#FFFFFF;flex:1;">SDLT Vergisi (Damga Vergisi)</span>
           <span class="risk-arrow" style="color:rgba(255,255,255,0.5);font-size:12px;transition:transform 0.3s;">▼</span>
         </div>
         <div class="risk-body" style="display:none;padding:0 18px 14px 48px;">
-          <p style="font-family:Inter,sans-serif;font-size:13px;color:rgba(255,255,255,0.75);line-height:1.6;margin:0;">İkinci mülk alımlarında ek %3 SDLT uygulanır. Tüm vergi hesaplamaları önceden finansal modele dahil edilir, sürpriz maliyet riski minimize edilir.</p>
+          <p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;color:rgba(255,255,255,0.75);line-height:1.6;margin:0;">İkinci mülk alımlarında ek %3 SDLT uygulanır. Tüm vergi hesaplamaları önceden finansal modele dahil edilir, sürpriz maliyet riski minimize edilir.</p>
         </div>
       </div>
 
       <div class="risk-item" style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;overflow:hidden;transition:all 0.3s;">
         <div onclick="toggleRisk(this)" style="display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;">
           <span style="font-size:18px;">🏦</span>
-          <span style="font-family:Inter,sans-serif;font-size:14px;font-weight:600;color:#FFFFFF;flex:1;">Finansman Riski (Köprü Kredisi)</span>
+          <span style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;font-weight:600;color:#FFFFFF;flex:1;">Finansman Riski (Köprü Kredisi)</span>
           <span class="risk-arrow" style="color:rgba(255,255,255,0.5);font-size:12px;transition:transform 0.3s;">▼</span>
         </div>
         <div class="risk-body" style="display:none;padding:0 18px 14px 48px;">
-          <p style="font-family:Inter,sans-serif;font-size:13px;color:rgba(255,255,255,0.75);line-height:1.6;margin:0;">Köprü kredileri yüksek faiz içerir. Proje süre uzaması finansman maliyetini artırır. Çıkış stratejisi ve süre tamponu her projede planlanır.</p>
+          <p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;color:rgba(255,255,255,0.75);line-height:1.6;margin:0;">Köprü kredileri yüksek faiz içerir. Proje süre uzaması finansman maliyetini artırır. Çıkış stratejisi ve süre tamponu her projede planlanır.</p>
         </div>
       </div>
 
       <div class="risk-item" style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;overflow:hidden;transition:all 0.3s;">
         <div onclick="toggleRisk(this)" style="display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;">
           <span style="font-size:18px;">📅</span>
-          <span style="font-family:Inter,sans-serif;font-size:14px;font-weight:600;color:#FFFFFF;flex:1;">Satış Süresi Uzaması</span>
+          <span style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;font-weight:600;color:#FFFFFF;flex:1;">Satış Süresi Uzaması</span>
           <span class="risk-arrow" style="color:rgba(255,255,255,0.5);font-size:12px;transition:transform 0.3s;">▼</span>
         </div>
         <div class="risk-body" style="display:none;padding:0 18px 14px 48px;">
-          <p style="font-family:Inter,sans-serif;font-size:13px;color:rgba(255,255,255,0.75);line-height:1.6;margin:0;">Piyasa koşullarına bağlı olarak satış süreci uzayabilir. Bölgesel talep analizi ve gerçekçi fiyatlandırma ile bu risk yönetilir.</p>
+          <p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;color:rgba(255,255,255,0.75);line-height:1.6;margin:0;">Piyasa koşullarına bağlı olarak satış süreci uzayabilir. Bölgesel talep analizi ve gerçekçi fiyatlandırma ile bu risk yönetilir.</p>
         </div>
       </div>
 
       <div class="risk-item" style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;overflow:hidden;transition:all 0.3s;">
         <div onclick="toggleRisk(this)" style="display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;">
           <span style="font-size:18px;">📋</span>
-          <span style="font-family:Inter,sans-serif;font-size:14px;font-weight:600;color:#FFFFFF;flex:1;">Planning İzin Gecikmeleri</span>
+          <span style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;font-weight:600;color:#FFFFFF;flex:1;">Planning İzin Gecikmeleri</span>
           <span class="risk-arrow" style="color:rgba(255,255,255,0.5);font-size:12px;transition:transform 0.3s;">▼</span>
         </div>
         <div class="risk-body" style="display:none;padding:0 18px 14px 48px;">
-          <p style="font-family:Inter,sans-serif;font-size:13px;color:rgba(255,255,255,0.75);line-height:1.6;margin:0;">Yapısal değişiklik gerektiren projelerde planning izni gecikmeleri yaşanabilir. İzin gerektiren projeler önceden tespit edilir ve zaman tamponu planlanır.</p>
+          <p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;color:rgba(255,255,255,0.75);line-height:1.6;margin:0;">Yapısal değişiklik gerektiren projelerde planning izni gecikmeleri yaşanabilir. İzin gerektiren projeler önceden tespit edilir ve zaman tamponu planlanır.</p>
         </div>
       </div>
 
       <div class="risk-item" style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;overflow:hidden;transition:all 0.3s;">
         <div onclick="toggleRisk(this)" style="display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;">
           <span style="font-size:18px;">🔍</span>
-          <span style="font-family:Inter,sans-serif;font-size:14px;font-weight:600;color:#FFFFFF;flex:1;">Gizli Yapısal Sorunlar</span>
+          <span style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;font-weight:600;color:#FFFFFF;flex:1;">Gizli Yapısal Sorunlar</span>
           <span class="risk-arrow" style="color:rgba(255,255,255,0.5);font-size:12px;transition:transform 0.3s;">▼</span>
         </div>
         <div class="risk-body" style="display:none;padding:0 18px 14px 48px;">
-          <p style="font-family:Inter,sans-serif;font-size:13px;color:rgba(255,255,255,0.75);line-height:1.6;margin:0;">Bağımsız yapısal survey ile alım öncesi gizli sorunlar tespit edilir. Renovasyon bütçesine %10-15 beklenmedik gider payı eklenir.</p>
+          <p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;color:rgba(255,255,255,0.75);line-height:1.6;margin:0;">Bağımsız yapısal survey ile alım öncesi gizli sorunlar tespit edilir. Renovasyon bütçesine %10-15 beklenmedik gider payı eklenir.</p>
         </div>
       </div>
 
       <div class="risk-item" style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;overflow:hidden;transition:all 0.3s;">
         <div onclick="toggleRisk(this)" style="display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;">
           <span style="font-size:18px;">⚖️</span>
-          <span style="font-family:Inter,sans-serif;font-size:14px;font-weight:600;color:#FFFFFF;flex:1;">%15 ROI Minimum Kuralı</span>
+          <span style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;font-weight:600;color:#FFFFFF;flex:1;">%15 ROI Minimum Kuralı</span>
           <span class="risk-arrow" style="color:rgba(255,255,255,0.5);font-size:12px;transition:transform 0.3s;">▼</span>
         </div>
         <div class="risk-body" style="display:none;padding:0 18px 14px 48px;">
-          <p style="font-family:Inter,sans-serif;font-size:13px;color:rgba(255,255,255,0.75);line-height:1.6;margin:0;">Her projede minimum %15 net ROI hedefi aranır. Bu hedefi karşılamayan projeler portföye dahil edilmez. Disiplinli seçim süreci temel risk güvencesidir.</p>
+          <p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;color:rgba(255,255,255,0.75);line-height:1.6;margin:0;">Her projede minimum %15 net ROI hedefi aranır. Bu hedefi karşılamayan projeler portföye dahil edilmez. Disiplinli seçim süreci temel risk güvencesidir.</p>
         </div>
       </div>
 
@@ -1042,8 +1043,8 @@ footer{background:#080F0B;padding:56px 0 28px}
   <div style="max-width:1000px;margin:0 auto;padding:0 24px;">
     
     <div style="text-align:center;margin-bottom:48px;">
-      <div style="font-family:Inter,sans-serif;font-size:12px;font-weight:700;letter-spacing:3px;color:#2E6DB4;text-transform:uppercase;margin-bottom:12px;">İLETİŞİM</div>
-      <h2 style="font-family:Playfair Display,serif;font-size:clamp(24px,3vw,36px);font-weight:700;color:#1B3A6B;margin:0 0 12px;">Bilgi Alın</h2>
+      <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:12px;font-weight:700;letter-spacing:3px;color:#2E6DB4;text-transform:uppercase;margin-bottom:12px;">İLETİŞİM</div>
+      <h2 style="font-family:Georgia,'Times New Roman',serif;font-size:clamp(24px,3vw,36px);font-weight:700;color:#1B3A6B;margin:0 0 12px;">Bilgi Alın</h2>
       <div style="width:40px;height:3px;background:linear-gradient(90deg,#1E4D8C,#5B9BD5);margin:0 auto;border-radius:2px;"></div>
     </div>
 
@@ -1053,29 +1054,29 @@ footer{background:#080F0B;padding:56px 0 28px}
       <div style="padding:8px 0;">
         <div style="display:flex;flex-direction:column;gap:28px;">
           <div style="display:flex;align-items:flex-start;gap:16px;">
-            <div style="width:36px;height:36px;border-radius:50%;background:#1E4D8C;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:14px;font-weight:700;flex-shrink:0;">1</div>
+            <div style="width:36px;height:36px;border-radius:50%;background:#1E4D8C;color:#fff;display:flex;align-items:center;justify-content:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;font-weight:700;flex-shrink:0;">1</div>
             <div>
-              <div style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#1B3A6B;margin-bottom:4px;">Formu doldurun</div>
-              <div style="font-family:'Inter',sans-serif;font-size:13px;color:#64748B;line-height:1.5;">Bütçe ve hedeflerinizi paylaşın</div>
+              <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:15px;font-weight:600;color:#1B3A6B;margin-bottom:4px;">Formu doldurun</div>
+              <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;color:#64748B;line-height:1.5;">Bütçe ve hedeflerinizi paylaşın</div>
             </div>
           </div>
           <div style="display:flex;align-items:flex-start;gap:16px;">
-            <div style="width:36px;height:36px;border-radius:50%;background:#1E4D8C;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:14px;font-weight:700;flex-shrink:0;">2</div>
+            <div style="width:36px;height:36px;border-radius:50%;background:#1E4D8C;color:#fff;display:flex;align-items:center;justify-content:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;font-weight:700;flex-shrink:0;">2</div>
             <div>
-              <div style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#1B3A6B;margin-bottom:4px;">Analiz alın</div>
-              <div style="font-family:'Inter',sans-serif;font-size:13px;color:#64748B;line-height:1.5;">Uzmanımız 24 saat içinde dönüş yapar</div>
+              <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:15px;font-weight:600;color:#1B3A6B;margin-bottom:4px;">Analiz alın</div>
+              <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;color:#64748B;line-height:1.5;">Uzmanımız 24 saat içinde dönüş yapar</div>
             </div>
           </div>
           <div style="display:flex;align-items:flex-start;gap:16px;">
-            <div style="width:36px;height:36px;border-radius:50%;background:#1E4D8C;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:14px;font-weight:700;flex-shrink:0;">3</div>
+            <div style="width:36px;height:36px;border-radius:50%;background:#1E4D8C;color:#fff;display:flex;align-items:center;justify-content:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;font-weight:700;flex-shrink:0;">3</div>
             <div>
-              <div style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#1B3A6B;margin-bottom:4px;">Yatırıma başlayın</div>
-              <div style="font-family:'Inter',sans-serif;font-size:13px;color:#64748B;line-height:1.5;">Size özel model sunulur</div>
+              <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:15px;font-weight:600;color:#1B3A6B;margin-bottom:4px;">Yatırıma başlayın</div>
+              <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;color:#64748B;line-height:1.5;">Size özel model sunulur</div>
             </div>
           </div>
         </div>
         <div style="margin-top:40px;padding:20px;background:#EEF4FF;border-radius:12px;border:1px solid #E0EAF5;">
-          <p style="font-family:Inter,sans-serif;font-size:12px;color:#64748B;line-height:1.6;margin:0;"><span style="color:#1E4D8C;font-weight:600;">Uyarı:</span> Property flip yatırımı yüksek getiri potansiyeli ile birlikte gerçek riskler içerir. Tüm yatırım kararlarında bağımsız finansal danışmanlık alması önerilir.</p>
+          <p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:12px;color:#64748B;line-height:1.6;margin:0;"><span style="color:#1E4D8C;font-weight:600;">Uyarı:</span> Property flip yatırımı yüksek getiri potansiyeli ile birlikte gerçek riskler içerir. Tüm yatırım kararlarında bağımsız finansal danışmanlık alması önerilir.</p>
         </div>
       </div>
 
@@ -1083,22 +1084,22 @@ footer{background:#080F0B;padding:56px 0 28px}
       <div style="background:#FFFFFF;border-radius:16px;padding:36px;box-shadow:0 4px 24px rgba(30,77,140,0.08);border:1px solid #E0EAF5;">
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
           <div>
-            <label style="font-family:Inter,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;display:block;margin-bottom:6px;">Ad Soyad</label>
-            <input type="text" placeholder="Adınız Soyadınız" style="width:100%;padding:10px 14px;border:1px solid #E0EAF5;border-radius:8px;font-family:Inter,sans-serif;font-size:14px;color:#1B3A6B;outline:none;box-sizing:border-box;transition:border 0.2s;" onfocus="this.style.borderColor='#1E4D8C'" onblur="this.style.borderColor='#E0EAF5'"/>
+            <label style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;display:block;margin-bottom:6px;">Ad Soyad</label>
+            <input type="text" placeholder="Adınız Soyadınız" style="width:100%;padding:10px 14px;border:1px solid #E0EAF5;border-radius:8px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;color:#1B3A6B;outline:none;box-sizing:border-box;transition:border 0.2s;" onfocus="this.style.borderColor='#1E4D8C'" onblur="this.style.borderColor='#E0EAF5'"/>
           </div>
           <div>
-            <label style="font-family:Inter,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;display:block;margin-bottom:6px;">E-Posta</label>
-            <input type="email" placeholder="email@ornek.com" style="width:100%;padding:10px 14px;border:1px solid #E0EAF5;border-radius:8px;font-family:Inter,sans-serif;font-size:14px;color:#1B3A6B;outline:none;box-sizing:border-box;transition:border 0.2s;" onfocus="this.style.borderColor='#1E4D8C'" onblur="this.style.borderColor='#E0EAF5'"/>
+            <label style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;display:block;margin-bottom:6px;">E-Posta</label>
+            <input type="email" placeholder="email@ornek.com" style="width:100%;padding:10px 14px;border:1px solid #E0EAF5;border-radius:8px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;color:#1B3A6B;outline:none;box-sizing:border-box;transition:border 0.2s;" onfocus="this.style.borderColor='#1E4D8C'" onblur="this.style.borderColor='#E0EAF5'"/>
           </div>
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
           <div>
-            <label style="font-family:Inter,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;display:block;margin-bottom:6px;">Telefon</label>
-            <input type="tel" placeholder="+44 veya +90" style="width:100%;padding:10px 14px;border:1px solid #E0EAF5;border-radius:8px;font-family:Inter,sans-serif;font-size:14px;color:#1B3A6B;outline:none;box-sizing:border-box;transition:border 0.2s;" onfocus="this.style.borderColor='#1E4D8C'" onblur="this.style.borderColor='#E0EAF5'"/>
+            <label style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;display:block;margin-bottom:6px;">Telefon</label>
+            <input type="tel" placeholder="+44 veya +90" style="width:100%;padding:10px 14px;border:1px solid #E0EAF5;border-radius:8px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;color:#1B3A6B;outline:none;box-sizing:border-box;transition:border 0.2s;" onfocus="this.style.borderColor='#1E4D8C'" onblur="this.style.borderColor='#E0EAF5'"/>
           </div>
           <div>
-            <label style="font-family:Inter,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;display:block;margin-bottom:6px;">Bütçe</label>
-            <select style="width:100%;padding:10px 14px;border:1px solid #E0EAF5;border-radius:8px;font-family:Inter,sans-serif;font-size:14px;color:#1B3A6B;outline:none;box-sizing:border-box;background:#fff;transition:border 0.2s;" onfocus="this.style.borderColor='#1E4D8C'" onblur="this.style.borderColor='#E0EAF5'">
+            <label style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;display:block;margin-bottom:6px;">Bütçe</label>
+            <select style="width:100%;padding:10px 14px;border:1px solid #E0EAF5;border-radius:8px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;color:#1B3A6B;outline:none;box-sizing:border-box;background:#fff;transition:border 0.2s;" onfocus="this.style.borderColor='#1E4D8C'" onblur="this.style.borderColor='#E0EAF5'">
               <option>Seçiniz...</option>
               <option>£50K - £100K</option>
               <option>£100K - £200K</option>
@@ -1108,10 +1109,10 @@ footer{background:#080F0B;padding:56px 0 28px}
           </div>
         </div>
         <div style="margin-bottom:20px;">
-          <label style="font-family:Inter,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;display:block;margin-bottom:6px;">Mesajınız</label>
-          <textarea placeholder="Yatırım hedeflerinizi yazabilirsiniz..." rows="3" style="width:100%;padding:10px 14px;border:1px solid #E0EAF5;border-radius:8px;font-family:Inter,sans-serif;font-size:14px;color:#1B3A6B;outline:none;box-sizing:border-box;resize:vertical;transition:border 0.2s;" onfocus="this.style.borderColor='#1E4D8C'" onblur="this.style.borderColor='#E0EAF5'"></textarea>
+          <label style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;display:block;margin-bottom:6px;">Mesajınız</label>
+          <textarea placeholder="Yatırım hedeflerinizi yazabilirsiniz..." rows="3" style="width:100%;padding:10px 14px;border:1px solid #E0EAF5;border-radius:8px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;color:#1B3A6B;outline:none;box-sizing:border-box;resize:vertical;transition:border 0.2s;" onfocus="this.style.borderColor='#1E4D8C'" onblur="this.style.borderColor='#E0EAF5'"></textarea>
         </div>
-        <button id="formBtn" onclick="handleSubmit(event)" style="width:100%;padding:12px;background:#1E4D8C;color:#FFFFFF;border:none;border-radius:8px;font-family:Inter,sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:all 0.3s;" onmouseover="this.style.background='#22C55E'" onmouseout="this.style.background='#1E4D8C'">
+        <button id="formBtn" onclick="handleSubmit(event)" style="width:100%;padding:12px;background:#1E4D8C;color:#FFFFFF;border:none;border-radius:8px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:all 0.3s;" onmouseover="this.style.background='#22C55E'" onmouseout="this.style.background='#1E4D8C'">
           Analiz Talep Et →
         </button>
       </div>
@@ -1130,7 +1131,7 @@ footer{background:#080F0B;padding:56px 0 28px}
       <div>
         <div class="f-logo">
           <div>
-            <div style="font-family:'Inter',sans-serif;font-size:1.45rem;font-weight:800;letter-spacing:12px;color:#ffffff;line-height:1;display:inline-block;"><span>Flipin</span><span style="color:#5B9BD5;">UK</span></div>
+            <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:1.45rem;font-weight:800;letter-spacing:12px;color:#ffffff;line-height:1;display:inline-block;"><span>Flipin</span><span style="color:#5B9BD5;">UK</span></div>
             <div style="font-size:.42rem;font-weight:600;color:#ffffff;letter-spacing:2px;text-transform:uppercase;margin-top:4px;">— Property Flip Investments —</div>
           </div>
         </div>
