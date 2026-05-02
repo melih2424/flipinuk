@@ -1401,87 +1401,38 @@ function handleSubmit(e) {
   }, 3500);
 }
 
-// HERO CAROUSEL
-const heroImages = [
-  { src: "images/carousel_10.webp", alt: "Tadilat 1", rotation: -10 },
-  { src: "images/carousel_11.webp", alt: "Mutfak", rotation: 5 },
-  { src: "images/carousel_12.webp", alt: "Banyo", rotation: -5 },
-  { src: "images/carousel_13.webp", alt: "Ev", rotation: 12 },
-  { src: "images/carousel_14.webp", alt: "Tadilat 2", rotation: -8 },
-  { src: "images/carousel_15.webp", alt: "İç mekan", rotation: 6 }
-];
-
-let heroAngles = heroImages.map((_, i) => i * (360 / heroImages.length));
-let heroMouseX = 0.5, heroMouseY = 0.5;
-const heroRadius = window.innerWidth < 768 ? 130 : 250;
-
-function buildHeroCards() {
+// HERO CAROUSEL - CSS animasyonu ile (JS rAF döngüsü yok)
+(function() {
   const inner = document.getElementById('carousel-inner');
   if (!inner) return;
-  inner.innerHTML = '';
   const isMob = window.innerWidth < 768;
   const cardW = isMob ? 100 : 190;
   const cardH = isMob ? 130 : 240;
+  const radius = isMob ? 110 : 250;
+  const heroImages = [
+    { src: "images/carousel_10.webp", alt: "Tadilat 1", rotation: -10 },
+    { src: "images/carousel_11.webp", alt: "Mutfak", rotation: 5 },
+    { src: "images/carousel_12.webp", alt: "Banyo", rotation: -5 },
+    { src: "images/carousel_13.webp", alt: "Ev", rotation: 12 },
+    { src: "images/carousel_14.webp", alt: "Tadilat 2", rotation: -8 },
+    { src: "images/carousel_15.webp", alt: "İç mekan", rotation: 6 }
+  ];
+  const total = heroImages.length;
   heroImages.forEach((img, i) => {
+    const angle = (i / total) * 2 * Math.PI;
+    const x = Math.cos(angle) * radius;
+    const y = Math.sin(angle) * radius * 0.4;
+    const scale = (Math.cos(angle) + 1.5) / 2.5;
+    const opacity = 0.75 + scale * 0.25;
     const wrapper = document.createElement('div');
-    wrapper.style.cssText = `position:absolute;width:${cardW}px;height:${cardH}px;transition:transform 0.1s;`;
-    wrapper.innerHTML = `
-      <div style="width:100%;height:100%;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.2);cursor:pointer;transition:transform 0.3s,box-shadow 0.3s;"
-           onmouseover="this.style.transform='scale(1.12)';this.style.boxShadow='0 30px 80px rgba(0,0,0,0.3)'"
-           onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 20px 60px rgba(0,0,0,0.2)'">
-        <img src="${img.src}" alt="${img.alt}" style="width:100%;height:100%;object-fit:cover;" / loading="lazy">
-        <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.15),transparent);opacity:0;transition:opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'"></div>
-      </div>`;
-    wrapper.dataset.rotation = img.rotation;
-    wrapper.dataset.index = i;
+    wrapper.style.cssText = `position:absolute;width:${cardW}px;height:${cardH}px;transform:translate(${x}px,${y}px) rotateZ(${img.rotation}deg);z-index:${Math.round(scale*10)};opacity:${opacity};`;
+    wrapper.innerHTML = `<div style="width:100%;height:100%;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.2);"><img src="${img.src}" alt="${img.alt}" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>`;
     inner.appendChild(wrapper);
   });
-}
+})();
 
-let heroScrollSpeed = 0;
-let lastScrollY = window.scrollY;
-
-window.addEventListener('scroll', () => {
-  const delta = window.scrollY - lastScrollY;
-  heroScrollSpeed += delta * 0.08;
-  lastScrollY = window.scrollY;
-});
-
-function animateHero() {
-  heroScrollSpeed *= 0.92;
-  const heroSpeedNow = 0.08 + Math.abs(heroScrollSpeed);
-  heroAngles = heroAngles.map(a => (a + heroSpeedNow) % 360);
-  const cards = document.querySelectorAll('#carousel-inner > div');
-  const px = (heroMouseX - 0.5) * 25;
-  const py = (heroMouseY - 0.5) * 25;
-  const animRadius = window.innerWidth < 768 ? 110 : heroRadius;
-  cards.forEach((card, i) => {
-    const angle = heroAngles[i] * (Math.PI / 180);
-    const x = Math.cos(angle) * animRadius;
-    const y = Math.sin(angle) * animRadius * 0.4;
-    const rot = card.dataset.rotation;
-    card.style.transform = `translate(${x}px, ${y}px) rotateX(${py}deg) rotateY(${px}deg) rotateZ(${rot}deg)`;
-    card.style.transformStyle = 'preserve-3d';
-    const scale = (Math.cos(angle) + 1.5) / 2.5;
-    card.style.zIndex = Math.round(scale * 10);
-    card.style.opacity = 0.75 + scale * 0.25;
-  });
-  requestAnimationFrame(animateHero);
-}
-
-function handleHeroMouse(e) {
-  const rect = e.currentTarget.getBoundingClientRect();
-  heroMouseX = (e.clientX - rect.left) / rect.width;
-  heroMouseY = (e.clientY - rect.top) / rect.height;
-}
-
-function resetHeroMouse() {
-  heroMouseX = 0.5;
-  heroMouseY = 0.5;
-}
-
-buildHeroCards();
-animateHero();
+function handleHeroMouse(e) {}
+function resetHeroMouse() {}
 
 // STATS COUNTER ANİMASYONU
 const statsObserver = new IntersectionObserver((entries) => {
@@ -1581,12 +1532,7 @@ if (statsSection) statsObserver.observe(statsSection);
       card.style.zIndex = pos.z;
     });
 
-    card.style.opacity = '0';
-    setTimeout(() => {
-      card.style.transition = 'opacity 0.5s, transform 0.6s cubic-bezier(.34,1.56,.64,1)';
-      card.style.opacity = '1';
-    }, i * 200);
-
+    card.style.opacity = '1';
     stack.appendChild(card);
   });
 })();
