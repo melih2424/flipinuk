@@ -1401,15 +1401,15 @@ function handleSubmit(e) {
   }, 3500);
 }
 
-// HERO CAROUSEL - akıcı 60fps, transform3d ile GPU
+// HERO CAROUSEL - akıcı elips, masaüstü ve mobil ayrı hız
 (function() {
   const heroImages = [
-    { src: "images/carousel_10.webp", alt: "Tadilat 1", rotation: -10 },
-    { src: "images/carousel_11.webp", alt: "Mutfak", rotation: 5 },
-    { src: "images/carousel_12.webp", alt: "Banyo", rotation: -5 },
-    { src: "images/carousel_13.webp", alt: "Ev", rotation: 12 },
-    { src: "images/carousel_14.webp", alt: "Tadilat 2", rotation: -8 },
-    { src: "images/carousel_15.webp", alt: "İç mekan", rotation: 6 }
+    { src: "images/carousel_10.webp", alt: "Tadilat 1", rot: -10 },
+    { src: "images/carousel_11.webp", alt: "Mutfak",    rot: 5  },
+    { src: "images/carousel_12.webp", alt: "Banyo",     rot: -5 },
+    { src: "images/carousel_13.webp", alt: "Ev",        rot: 12 },
+    { src: "images/carousel_14.webp", alt: "Tadilat 2", rot: -8 },
+    { src: "images/carousel_15.webp", alt: "İç mekan",  rot: 6  }
   ];
 
   const inner = document.getElementById('carousel-inner');
@@ -1418,36 +1418,43 @@ function handleSubmit(e) {
   const isMob = window.innerWidth < 768;
   const cardW = isMob ? 100 : 190;
   const cardH = isMob ? 130 : 240;
-  const radius = isMob ? 110 : 250;
-  const total = heroImages.length;
-  const speed = 0.003; // radyan/ms — yavaş akıcı dönüş
+  const rx    = isMob ? 110 : 250;
+  const ry    = isMob ? 40  : 90;
+  const dur   = isMob ? 35  : 25; // mobilde yavaş, masaüstü orta
 
-  const wrappers = heroImages.map((img, i) => {
-    const wrapper = document.createElement('div');
-    wrapper.style.cssText = `position:absolute;width:${cardW}px;height:${cardH}px;will-change:transform;backface-visibility:hidden;`;
-    wrapper.innerHTML = `<div style="width:100%;height:100%;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.2);"><img src="${img.src}" alt="${img.alt}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>`;
-    inner.appendChild(wrapper);
-    return { el: wrapper, rot: img.rotation, offset: (i / total) * Math.PI * 2 };
+  // Elips yörüngesi için smooth keyframe — çok sayıda adım titreme önler
+  const styleEl = document.createElement('style');
+  const n = heroImages.length;
+  let css = '';
+
+  heroImages.forEach((img, i) => {
+    const delay = -(i / n) * dur;
+    const steps = 60;
+    let frames = '';
+    for (let s = 0; s <= steps; s++) {
+      const pct = (s / steps) * 100;
+      const a = (s / steps) * Math.PI * 2;
+      const x = Math.round(Math.cos(a) * rx * 100) / 100;
+      const y = Math.round(Math.sin(a) * ry * 100) / 100;
+      frames += `${pct.toFixed(1)}% { transform: translate3d(${x}px,${y}px,0) rotateZ(${img.rot}deg); }
+`;
+    }
+    css += `@keyframes orb${i} {
+${frames}}
+`;
+    css += `.fc${i} { position:absolute; width:${cardW}px; height:${cardH}px; animation:orb${i} ${dur}s linear ${delay}s infinite; will-change:transform; }
+`;
   });
 
-  let startTime = null;
+  styleEl.textContent = css;
+  document.head.appendChild(styleEl);
 
-  function tick(ts) {
-    if (!startTime) startTime = ts;
-    const elapsed = ts - startTime;
-    const angle = elapsed * speed;
-
-    wrappers.forEach((w) => {
-      const a = angle + w.offset;
-      const x = Math.cos(a) * radius;
-      const y = Math.sin(a) * radius * 0.38;
-      w.el.style.transform = `translate3d(${x}px,${y}px,0) rotateZ(${w.rot}deg)`;
-    });
-
-    requestAnimationFrame(tick);
-  }
-
-  setTimeout(() => requestAnimationFrame(tick), 200);
+  heroImages.forEach((img, i) => {
+    const el = document.createElement('div');
+    el.className = `fc${i}`;
+    el.innerHTML = `<div style="width:100%;height:100%;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.22);"><img src="${img.src}" alt="${img.alt}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>`;
+    inner.appendChild(el);
+  });
 })();
 
 function handleHeroMouse(e) {}
