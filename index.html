@@ -1449,12 +1449,46 @@ ${frames}}
   styleEl.textContent = css;
   document.head.appendChild(styleEl);
 
-  heroImages.forEach((img, i) => {
+  const cards = heroImages.map((img, i) => {
     const el = document.createElement('div');
     el.className = `fc${i}`;
     el.innerHTML = `<div style="width:100%;height:100%;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.22);"><img src="${img.src}" alt="${img.alt}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>`;
     inner.appendChild(el);
+    return el;
   });
+
+  // Scroll ile hafif hız artışı — playbackRate değiştirerek
+  let scrollBoost = 0;
+  let lastScrollY = window.scrollY;
+  let animEls = [];
+
+  // Animasyonlara erişmek için getAnimations() kullan
+  function applyRate(rate) {
+    cards.forEach(el => {
+      const anims = el.getAnimations();
+      anims.forEach(a => { a.playbackRate = rate; });
+    });
+  }
+
+  window.addEventListener('scroll', () => {
+    const delta = window.scrollY - lastScrollY;
+    lastScrollY = window.scrollY;
+    if (delta > 0) {
+      // Aşağı scroll — hafifçe hızlan
+      scrollBoost = Math.min(scrollBoost + 0.08, 0.5);
+    }
+  }, { passive: true });
+
+  // Boost yavaşça normale döner
+  function decayBoost() {
+    if (scrollBoost > 0) {
+      scrollBoost = Math.max(0, scrollBoost - 0.01);
+      applyRate(1 + scrollBoost);
+    }
+    requestAnimationFrame(decayBoost);
+  }
+  requestAnimationFrame(decayBoost);
+
 })();
 
 function handleHeroMouse(e) {}
