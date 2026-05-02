@@ -1401,7 +1401,7 @@ function handleSubmit(e) {
   }, 3500);
 }
 
-// HERO CAROUSEL - CSS animasyonu ile (JS rAF döngüsü yok)
+// HERO CAROUSEL - CSS @keyframes ile dönen animasyon (JS rAF yok)
 (function() {
   const inner = document.getElementById('carousel-inner');
   if (!inner) return;
@@ -1409,6 +1409,7 @@ function handleSubmit(e) {
   const cardW = isMob ? 100 : 190;
   const cardH = isMob ? 130 : 240;
   const radius = isMob ? 110 : 250;
+  const speed = 18; // saniye (büyük = yavaş)
   const heroImages = [
     { src: "images/carousel_10.webp", alt: "Tadilat 1", rotation: -10 },
     { src: "images/carousel_11.webp", alt: "Mutfak", rotation: 5 },
@@ -1418,15 +1419,34 @@ function handleSubmit(e) {
     { src: "images/carousel_15.webp", alt: "İç mekan", rotation: 6 }
   ];
   const total = heroImages.length;
+
+  // Her kart için CSS keyframe animasyonu: elips yörüngede döner
+  const style = document.createElement('style');
+  let css = '';
   heroImages.forEach((img, i) => {
-    const angle = (i / total) * 2 * Math.PI;
-    const x = Math.cos(angle) * radius;
-    const y = Math.sin(angle) * radius * 0.4;
-    const scale = (Math.cos(angle) + 1.5) / 2.5;
-    const opacity = 0.75 + scale * 0.25;
+    const startAngle = (i / total) * 360;
+    const rot = img.rotation;
+    // Her kart kendi offsetinden başlayarak tam tur atar
+    css += `
+@keyframes orbit${i} {
+  0%   { transform: rotate(${startAngle}deg) translateX(${radius}px) scaleY(0.4) rotate(-${startAngle}deg) rotateZ(${rot}deg); }
+  100% { transform: rotate(${startAngle + 360}deg) translateX(${radius}px) scaleY(0.4) rotate(-${startAngle + 360}deg) rotateZ(${rot}deg); }
+}
+.carousel-card-${i} {
+  position:absolute;
+  width:${cardW}px;
+  height:${cardH}px;
+  animation: orbit${i} ${speed}s linear infinite;
+  transform-origin: -${radius}px center;
+}`;
+  });
+  style.textContent = css;
+  document.head.appendChild(style);
+
+  heroImages.forEach((img, i) => {
     const wrapper = document.createElement('div');
-    wrapper.style.cssText = `position:absolute;width:${cardW}px;height:${cardH}px;transform:translate(${x}px,${y}px) rotateZ(${img.rotation}deg);z-index:${Math.round(scale*10)};opacity:${opacity};`;
-    wrapper.innerHTML = `<div style="width:100%;height:100%;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.2);"><img src="${img.src}" alt="${img.alt}" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>`;
+    wrapper.className = `carousel-card-${i}`;
+    wrapper.innerHTML = `<div style="width:100%;height:${cardH}px;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.2);"><img src="${img.src}" alt="${img.alt}" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>`;
     inner.appendChild(wrapper);
   });
 })();
