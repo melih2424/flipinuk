@@ -1401,15 +1401,8 @@ function handleSubmit(e) {
   }, 3500);
 }
 
-// HERO CAROUSEL - CSS @keyframes ile dönen animasyon (JS rAF yok)
+// HERO CAROUSEL - throttled rAF (60fps yerine ~20fps, düşük CPU)
 (function() {
-  const inner = document.getElementById('carousel-inner');
-  if (!inner) return;
-  const isMob = window.innerWidth < 768;
-  const cardW = isMob ? 100 : 190;
-  const cardH = isMob ? 130 : 240;
-  const radius = isMob ? 110 : 250;
-  const speed = 18; // saniye (büyük = yavaş)
   const heroImages = [
     { src: "images/carousel_10.webp", alt: "Tadilat 1", rotation: -10 },
     { src: "images/carousel_11.webp", alt: "Mutfak", rotation: 5 },
@@ -1418,37 +1411,47 @@ function handleSubmit(e) {
     { src: "images/carousel_14.webp", alt: "Tadilat 2", rotation: -8 },
     { src: "images/carousel_15.webp", alt: "İç mekan", rotation: 6 }
   ];
+
+  const inner = document.getElementById('carousel-inner');
+  if (!inner) return;
+
+  const isMob = window.innerWidth < 768;
+  const cardW = isMob ? 100 : 190;
+  const cardH = isMob ? 130 : 240;
+  const radius = isMob ? 110 : 250;
   const total = heroImages.length;
 
-  // Her kart için CSS keyframe animasyonu: elips yörüngede döner
-  const style = document.createElement('style');
-  let css = '';
-  heroImages.forEach((img, i) => {
-    const startAngle = (i / total) * 360;
-    const rot = img.rotation;
-    // Her kart kendi offsetinden başlayarak tam tur atar
-    css += `
-@keyframes orbit${i} {
-  0%   { transform: rotate(${startAngle}deg) translateX(${radius}px) scaleY(0.4) rotate(-${startAngle}deg) rotateZ(${rot}deg); }
-  100% { transform: rotate(${startAngle + 360}deg) translateX(${radius}px) scaleY(0.4) rotate(-${startAngle + 360}deg) rotateZ(${rot}deg); }
-}
-.carousel-card-${i} {
-  position:absolute;
-  width:${cardW}px;
-  height:${cardH}px;
-  animation: orbit${i} ${speed}s linear infinite;
-  transform-origin: -${radius}px center;
-}`;
-  });
-  style.textContent = css;
-  document.head.appendChild(style);
-
-  heroImages.forEach((img, i) => {
+  // Kartları oluştur
+  const wrappers = heroImages.map((img, i) => {
     const wrapper = document.createElement('div');
-    wrapper.className = `carousel-card-${i}`;
-    wrapper.innerHTML = `<div style="width:100%;height:${cardH}px;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.2);"><img src="${img.src}" alt="${img.alt}" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>`;
+    wrapper.style.cssText = `position:absolute;width:${cardW}px;height:${cardH}px;will-change:transform;`;
+    wrapper.innerHTML = `<div style="width:100%;height:100%;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.2);"><img src="${img.src}" alt="${img.alt}" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>`;
     inner.appendChild(wrapper);
+    return { el: wrapper, rot: img.rotation };
   });
+
+  let angle = 0;
+  let last = 0;
+  const interval = 50; // ms — 20fps yeterli
+
+  function tick(ts) {
+    if (ts - last < interval) { requestAnimationFrame(tick); return; }
+    last = ts;
+    angle = (angle + 0.4) % 360;
+    wrappers.forEach((w, i) => {
+      const a = (angle + (i / total) * 360) * Math.PI / 180;
+      const x = Math.cos(a) * radius;
+      const y = Math.sin(a) * radius * 0.38;
+      const scale = (Math.cos(a) + 1.5) / 2.5;
+      w.el.style.transform = `translate(${x}px,${y}px) rotateZ(${w.rot}deg)`;
+      w.el.style.zIndex = Math.round(scale * 10);
+      w.el.style.opacity = 0.75 + scale * 0.25;
+    });
+    requestAnimationFrame(tick);
+  }
+
+  // Sayfa yüklendikten 300ms sonra başlat (LCP'yi etkilemesin)
+  setTimeout(() => requestAnimationFrame(tick), 300);
 })();
 
 function handleHeroMouse(e) {}
