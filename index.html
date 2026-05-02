@@ -1474,8 +1474,11 @@ ${frames}}
     const delta = window.scrollY - lastScrollY;
     lastScrollY = window.scrollY;
     if (delta > 0) {
-      // Aşağı scroll — hafifçe hızlan
+      // Aşağı scroll — hızlan
       scrollBoost = Math.min(scrollBoost + 0.8, 5.0);
+    } else if (delta < 0) {
+      // Yukarı scroll — hızla normale dön
+      scrollBoost = Math.max(0, scrollBoost - 1.5);
     }
   }, { passive: true });
 
