@@ -1420,7 +1420,7 @@ function handleSubmit(e) {
   const cardH = isMob ? 130 : 240;
   const rx    = isMob ? 110 : 250;
   const ry    = isMob ? 40  : 90;
-  const dur   = isMob ? 35  : 25; // mobilde yavaş, masaüstü orta
+  const dur   = 35; // mobil ve masaüstü aynı hız
 
   // Elips yörüngesi için smooth keyframe — çok sayıda adım titreme önler
   const styleEl = document.createElement('style');
@@ -1475,14 +1475,14 @@ ${frames}}
     lastScrollY = window.scrollY;
     if (delta > 0) {
       // Aşağı scroll — hafifçe hızlan
-      scrollBoost = Math.min(scrollBoost + 0.08, 0.5);
+      scrollBoost = Math.min(scrollBoost + 0.2, 1.2);
     }
   }, { passive: true });
 
   // Boost yavaşça normale döner
   function decayBoost() {
     if (scrollBoost > 0) {
-      scrollBoost = Math.max(0, scrollBoost - 0.01);
+      scrollBoost = Math.max(0, scrollBoost - 0.02);
       applyRate(1 + scrollBoost);
     }
     requestAnimationFrame(decayBoost);
